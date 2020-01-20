@@ -16,12 +16,32 @@ public class MyArrayADT implements MyArrayInterface {
 
     @Override
     public void traverse() {
-
+        System.out.println("Printing the array");
+        for (int i = 0; i < elementCount; i++) {
+            System.out.print(data[i]);
+            if (i != (elementCount - 1)) {
+                System.out.print(",");
+            }
+        }
+        System.out.println();
     }
 
     @Override
     public boolean insert(int element) {
-        return false;
+        boolean response = false;
+        if (!isFull()) {
+            data[elementCount] = element;
+            response = true;
+        }
+        return response;
+    }
+
+    private boolean isFull() {
+        boolean response = false;
+        if (elementCount == size) {
+            response = true;
+        }
+        return response;
     }
 
     @Override
