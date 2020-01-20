@@ -31,6 +31,7 @@ public class MyArrayADT implements MyArrayInterface {
         boolean response = false;
         if (!isFull()) {
             data[elementCount] = element;
+            elementCount++;
             response = true;
         }
         return response;
@@ -46,7 +47,20 @@ public class MyArrayADT implements MyArrayInterface {
 
     @Override
     public int delete() {
-        return 0;
+        int response = 0;
+        if (!isEmpty()) {
+            elementCount--;
+            response = data[elementCount];
+        }
+        return response;
+    }
+
+    private boolean isEmpty() {
+        boolean response = false;
+        if (elementCount == 0) {
+            response = true;
+        }
+        return response;
     }
 
     @Override
