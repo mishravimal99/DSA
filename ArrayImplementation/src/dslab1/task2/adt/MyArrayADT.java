@@ -78,7 +78,16 @@ public class MyArrayADT implements MyArrayInterface {
     @Override
     public int[] sort() {
         int[] response = data;
+        for (int i = 0; i < elementCount - 1; i++) {
+            for (int j = 0; j < elementCount - 1 - i; j++) {
+                if (data[j] > data[j + 1]) {
+                    int temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
 
-        return new int[0];
+        }
+        return response;
     }
 }
