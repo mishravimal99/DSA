@@ -65,11 +65,20 @@ public class MyArrayADT implements MyArrayInterface {
 
     @Override
     public boolean search(int element) {
+        boolean response = false;
+        for (int i = 0; i < elementCount; i++) {
+            if (data[i] == element) {
+                response = true;
+                break;
+            }
+        }
         return false;
     }
 
     @Override
     public int[] sort() {
+        int[] response = data;
+
         return new int[0];
     }
 }
