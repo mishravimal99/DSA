@@ -11,4 +11,8 @@ public interface DoubleEndedQueueADT {
 
     void showQueue();
 
+    void peekRear();
+
+    void peekFront();
+
 }
