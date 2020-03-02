@@ -94,9 +94,34 @@ public class MyBST {
         //search end
         //temp is containing the node to be delete or null
         if (temp != null) {
+            response = temp;
             if (isLeaf(temp)) {
-
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(null);
+                    } else {
+                        parent.setRight(null);
+                    }
+                } else {
+                    root = null;
+                }
+            } else if (hasLeftChild(temp)) {
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(temp.getLeft());
+                    } else {
+                        parent.setRight(temp.getLeft());
+                    }
+                }
             }
+        }
+        return response;
+    }
+
+    private boolean hasLeftChild(TreeNode temp) {
+        boolean response = false;
+        if (temp.getLeft() != null && temp.getRight() == null) {
+            response = true;
         }
         return response;
     }
