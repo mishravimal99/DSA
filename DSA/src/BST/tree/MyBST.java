@@ -125,10 +125,35 @@ public class MyBST {
                 } else {
                     root = temp.getRight();
                 }
+            } else {
+                TreeNode successor = getSuccessor(temp);
+                successor.setRight(temp.getRight());
+                successor.setLeft(temp.getLeft());
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(successor);
+                    } else {
+                        parent.setRight(successor);
+                    }
+                } else {
+                    root = successor;
+                }
             }
         }
         return response;
     }
+
+    private TreeNode getSuccessor(TreeNode temp) {
+        TreeNode response = null;
+        temp = temp.getRight();
+        while (temp != null) {
+            response = temp;
+            temp = temp.getLeft();
+        }
+        response = delete(response.getData());
+        return response;
+    }
+
     private boolean hasRightChild(TreeNode temp) {
         boolean response = false;
         if (temp.getRight() != null && temp.getLeft() == null) {
