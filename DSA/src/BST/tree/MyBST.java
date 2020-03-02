@@ -112,8 +112,29 @@ public class MyBST {
                     } else {
                         parent.setRight(temp.getLeft());
                     }
+                } else {
+                    root = temp.getLeft();
+                }
+            } else if (hasRightChild(temp)) {
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(temp.getRight());
+                    } else {
+                        parent.setRight(temp.getRight());
+                    }
+                } else {
+                    root = temp.getRight();
                 }
             }
+        }
+        }
+        return response;
+    }
+
+    private boolean hasRightChild(TreeNode temp) {
+        boolean response = false;
+        if (temp.getRight() != null && temp.getLeft() == null) {
+            response = true;
         }
         return response;
     }
