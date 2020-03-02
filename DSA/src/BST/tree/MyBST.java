@@ -127,10 +127,8 @@ public class MyBST {
                 }
             }
         }
-        }
         return response;
     }
-
     private boolean hasRightChild(TreeNode temp) {
         boolean response = false;
         if (temp.getRight() != null && temp.getLeft() == null) {
