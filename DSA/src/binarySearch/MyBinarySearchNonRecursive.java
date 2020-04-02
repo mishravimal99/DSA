@@ -19,7 +19,7 @@ algorithm : binarySearch(search element)
 public class MyBinarySearchNonRecursive {
     private int[] arr;
 
-    MyBinarySearchNonRecursive(int[] arr) {
+    private MyBinarySearchNonRecursive(int[] arr) {
         this.arr = arr;
     }
 
