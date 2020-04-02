@@ -20,7 +20,21 @@ end
         this.arr = arr;
     }
 
-    boolean binarySearch(int searchelement, int low, int high) {
+    public static void main(String[] args) {
+        int[] sortedArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        MyBinarySearchRecursive obj = new MyBinarySearchRecursive(sortedArray);
+        int low = 0;
+        int high = sortedArray.length - 1;
+        int searchelement = 70;
+        boolean result = obj.binarySearch(searchelement, low, high);
+        if (result) {
+            System.out.println("Element Found");
+        } else {
+            System.out.println("Element not found");
+        }
+    }
+
+    private boolean binarySearch(int searchelement, int low, int high) {
         if (low > high) {
             return false;
         }
