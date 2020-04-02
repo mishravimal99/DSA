@@ -14,4 +14,23 @@ Step 7:		 binarySearch(searchElement , low , mid - 1)
 Step 8:		 binarySearch(searchElement, mid + 1, high)
 end
  */
+    private int[] arr;
+
+    public MyBinarySearchRecursive(int[] arr) {
+        this.arr = arr;
+    }
+
+    boolean binarySearch(int searchelement, int low, int high) {
+        if (low > high) {
+            return false;
+        }
+        int mid = (low + high) / 2;
+        if (arr[mid] == searchelement) {
+            return true;
+        } else if (arr[mid] > searchelement) {
+            return binarySearch(searchelement, low, mid - 1);
+        } else {
+            return binarySearch(searchelement, mid + 1, high);
+        }
+    }
 }
