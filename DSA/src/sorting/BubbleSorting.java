@@ -3,7 +3,7 @@ package sorting;
 public class BubbleSorting {
     private int[] arr;
 
-    public BubbleSorting(int[] arr) {
+    private BubbleSorting(int[] arr) {
         this.arr = arr;
     }
 
