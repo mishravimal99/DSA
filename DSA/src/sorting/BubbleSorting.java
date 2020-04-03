@@ -8,7 +8,7 @@ public class BubbleSorting {
     }
 
     private static void bubblesort(int[] arr) {
-        int temp = 0;
+        int temp;
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -21,8 +21,8 @@ public class BubbleSorting {
     }
 
     private static void printarray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int value : arr) {
+            System.out.print(value + " ");
         }
     }
 
